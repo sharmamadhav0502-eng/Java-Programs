@@ -10,7 +10,7 @@ public class Fibonacci {
         return recursiveFib(n - 1) + recursiveFib(n - 2);
     }
 
-    // Non-Recursive Method
+
     static void nonRecursiveSeries(int n) {
 
         int a = 0, b = 1, c;
@@ -31,7 +31,7 @@ public class Fibonacci {
         }
     }
 
-    // Recursive Series
+    
     static void recursiveSeries(int n) {
 
         System.out.print("Recursive Series: ");

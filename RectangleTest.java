@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 class Rectangle {
 
     double width, length, area;
@@ -24,27 +26,50 @@ public class RectangleTest {
 
     public static void main(String[] args) {
 
+        Scanner sc = new Scanner(System.in);
+
         Rectangle r1 = new Rectangle();
         Rectangle r2 = new Rectangle();
 
-        r1.set_length(5);
-        r1.set_width(4);
-        r1.set_color("Red");
+        // Rectangle 1
+        System.out.println("Enter details for Rectangle 1:");
+
+        System.out.print("Enter length: ");
+        r1.set_length(sc.nextDouble());
+
+        System.out.print("Enter width: ");
+        r1.set_width(sc.nextDouble());
+
+        System.out.print("Enter color: ");
+        r1.set_color(sc.next());
+
         r1.find_area();
 
-        r2.set_length(5);
-        r2.set_width(4);
-        r2.set_color("Red");
+        // Rectangle 2
+        System.out.println("\nEnter details for Rectangle 2:");
+
+        System.out.print("Enter length: ");
+        r2.set_length(sc.nextDouble());
+
+        System.out.print("Enter width: ");
+        r2.set_width(sc.nextDouble());
+
+        System.out.print("Enter color: ");
+        r2.set_color(sc.next());
+
         r2.find_area();
 
+        // Compare rectangles
         if (r1.area == r2.area &&
-            r1.color.equals(r2.color)) {
+            r1.color.equalsIgnoreCase(r2.color)) {
 
-            System.out.println("Matching Rectangles");
+            System.out.println("\nMatching Rectangles");
 
         } else {
 
-            System.out.println("Non-Matching Rectangles");
+            System.out.println("\nNon-Matching Rectangles");
         }
+
+        sc.close();
     }
 }
